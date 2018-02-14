@@ -1,0 +1,31 @@
+<h1>Welcome to Admin Dashboard</h1>
+
+
+<% if user_signed_in? %>
+  <li>
+    <%= link_to('Edit Profile', edit_user_registration_path) %>
+  </li>
+  <li>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  </li>
+<% else %>
+  <li>
+    <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
+
+<%= link_to('Add Movies', new_admin_movie_path) %>
+
+<h1>All Movies</h1>
+
+<ul>
+  <% @movies.each do |movie| %>
+  <li>
+    <div>
+      <h3><%= link_to movie.name, admin_movie_path(movie) %></h3>
+      <p><%= link_to 'Edit', edit_admin_movie_path(movie) %></p>
+      <p><%= link_to'Delete', admin_movie_path(movie), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    </div>
+  </li>
+  <% end %>
+</ul>

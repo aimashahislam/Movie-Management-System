@@ -1,0 +1,31 @@
+<%= form_for([:admin, @movie]) do |form| %>
+  
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name%>
+  </div>
+  
+  <div class="field">
+    <%= form.label :genre %>
+    <%= form.text_field :genre%>
+  </div>
+  
+  <div class="field">
+    <%= form.label :duration %>
+    <%= form.time_select :duration%>
+  </div>
+  
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.cktext_area :description, rows: 15%>
+  </div>
+  
+  <div class="field">
+    <%= form.label :release_date %>
+    <%= form.date_select :release_date%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

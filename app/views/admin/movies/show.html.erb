@@ -1,0 +1,23 @@
+<h1>Name: <%= @movie.name %></h1>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @movie.genre %>
+</p>
+ 
+<p>
+  <strong>Duration:</strong>
+  <%= @movie.duration %>
+</p>
+
+<p>
+  <strong>Release Date:</strong>
+  <%= @movie.release_date %>
+</p>
+
+
+<p>
+  <strong>Description:</strong>
+  <%= @movie.description.html_safe%>
+</p>
+
