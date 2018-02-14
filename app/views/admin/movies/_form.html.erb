@@ -25,6 +25,17 @@
     <%= form.date_select :release_date%>
   </div>
 
+  <div>
+    <p><strong>Posters:</strong></p>
+    <%= form.fields_for :posters do |poster| %>
+      <%= render 'poster_fields', f: poster %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add poster', form, :posters %>
+    </div>  
+      
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
