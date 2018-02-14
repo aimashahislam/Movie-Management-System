@@ -18,6 +18,9 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @movie.description.html_safe%>
+  <%= @movie.description.html_safe %>
 </p>
 
+<% @movie.posters.each do |poster| %>
+  <%= image_tag poster.avatar.url %>
+<% end %>
