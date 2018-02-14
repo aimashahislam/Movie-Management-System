@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   root 'home#index'
 
   namespace :admin do
-    resources :movies
+    resources :movies do
+      resources :posters
+    end
   end
 
 end
