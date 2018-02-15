@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :posters
       resources :actors
     end
+    resources :actors
   end
 
 end

@@ -1,0 +1,16 @@
+<h1>Name: <%= @actor.name %></h1>
+
+<p>
+  <strong>Date Of Birth:</strong>
+  <%= @actor.date_of_birth %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @actor.bio.html_safe %>
+</p>
+
+<div>
+  <strong>Picture:</strong>
+  <%= image_tag @actor.avatar.url %>
+</div>
