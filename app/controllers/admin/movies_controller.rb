@@ -6,6 +6,7 @@ class Admin::MoviesController < ApplicationController
   end
 
   def show
+    @youtube_id = @movie.trailer.split("=").last
   end
 
   def new
@@ -56,6 +57,6 @@ class Admin::MoviesController < ApplicationController
     end
 
     def movie_params
-      params.require(:movie).permit(:name, :genre, :duration, :description, :release_date, posters_attributes: [:id, :avatar])
+      params.require(:movie).permit(:name, :genre, :duration, :description, :release_date, :trailer, posters_attributes: [:id, :avatar])
     end
 end

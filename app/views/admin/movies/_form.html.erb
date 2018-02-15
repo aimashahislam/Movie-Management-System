@@ -25,6 +25,12 @@
     <%= form.date_select :release_date%>
   </div>
 
+  <div class="field">
+    <%= form.label :trailer %>
+    <%= form.text_field :trailer %>
+    <span class="help-block">A link to the video on YouTube.</span>
+  </div>
+
   <div>
     <p><strong>Posters:</strong></p>
     <%= form.fields_for :posters do |poster| %>
