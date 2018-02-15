@@ -41,6 +41,11 @@
     </div>  
   </div>
 
+  <div class="field">
+    <%= form.label :actor_ids, "Actors" %><br />
+    <%= form.collection_select :actor_ids, Actor.order(:name), :id, :name, {}, {multiple: true} %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

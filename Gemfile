@@ -36,6 +36,8 @@ gem 'devise', '4.3.0'
 gem "paperclip", "~> 5.2.1"
 gem "ckeditor"
 gem "cocoon"
+gem "chosen-rails"
+gem 'jquery-turbolinks'
 
 
 group :development, :test do

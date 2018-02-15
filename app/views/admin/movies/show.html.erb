@@ -21,6 +21,15 @@
   <%= @movie.description.html_safe %>
 </p>
 
+<p>
+  <strong>Actors:</strong>
+  <ul>
+    <% @movie.actors.each do |actor| %>
+      <li><%= actor.name %></li>
+    <% end %>
+  </ul>
+</p>
+
 <div>
   <strong>Trailer:</strong><br />
   <iframe src='https://www.youtube.com/embed/<%= @youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
