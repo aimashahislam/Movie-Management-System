@@ -1,4 +1,5 @@
 class Admin::MoviesController < ApplicationController
+  
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -57,6 +58,6 @@ class Admin::MoviesController < ApplicationController
     end
 
     def movie_params
-      params.require(:movie).permit(:name, :genre, :duration, :description, :release_date, :trailer, :actor_ids => [], posters_attributes: [:id, :avatar])
+      params.require(:movie).permit(:name, :genre, :duration, :description, :release_date, :trailer, actor_ids: [], posters_attributes: [:id, :avatar])
     end
 end
