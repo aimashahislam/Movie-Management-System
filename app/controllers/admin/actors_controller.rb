@@ -1,4 +1,5 @@
 class Admin::ActorsController < ApplicationController
+  
   before_action :set_actor, only: [:show, :edit, :update, :destroy]
 
   def index
