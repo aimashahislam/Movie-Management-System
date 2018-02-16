@@ -13,7 +13,13 @@ gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
+gem "paperclip", "~> 5.2.1"
+gem "ckeditor"
+gem "cocoon"
+gem "chosen-rails"
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -28,16 +34,14 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
+gem 'devise', '4.3.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem "jquery-rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'devise', '4.3.0'
-gem "paperclip", "~> 5.2.1"
-gem "ckeditor"
-gem "cocoon"
-gem "chosen-rails"
+
 gem 'jquery-turbolinks'
+
 
 
 group :development, :test do

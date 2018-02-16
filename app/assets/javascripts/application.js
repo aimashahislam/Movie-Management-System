@@ -16,5 +16,6 @@
 //= require ckeditor/init
 //= require cocoon
 //= require chosen-jquery
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
