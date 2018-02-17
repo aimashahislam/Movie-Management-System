@@ -10,9 +10,27 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-  *= require chosen
- 
- @import "bootstrap-sprockets";
- @import "bootstrap";
  
  */
+ 
+ 
+// Bootstrap
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// Variables
+@import "base/variables";
+
+// Default styles
+@import "base/default";
+
+// Partials - main css files
+@import "partials/*";
+@import "partials/layout/*";
+
+// Media queries for a responsive design
+@import "responsive/*";
+
+// Chosen gem
+@import "chosen";
+
