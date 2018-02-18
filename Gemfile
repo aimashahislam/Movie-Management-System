@@ -39,7 +39,6 @@ gem "paperclip", "~> 5.2.1"
 gem "ckeditor"
 gem "cocoon"
 gem "chosen-rails"
-gem 'jquery-turbolinks'
 gem 'bootstrap_form'
 
 
