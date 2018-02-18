@@ -8,7 +8,6 @@ class Admin::MoviesController < ApplicationController
   end
 
   def show
-    @youtube_id = @movie.trailer.split("=").last
   end
 
   def new

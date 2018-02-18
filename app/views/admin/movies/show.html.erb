@@ -32,7 +32,7 @@
 
 <div>
   <strong>Trailer:</strong><br />
-  <iframe src='https://www.youtube.com/embed/<%= @youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+  <%= @movie.trailer.html_safe %>
 </div>
 
 <div>
