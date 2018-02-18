@@ -25,6 +25,7 @@ class Admin::MoviesController < ApplicationController
         format.html { redirect_to admin_movie_path(@movie), notice: 'Movie was successfully created.' }
         format.json { render :show, status: :created, location: @movie }
       else
+        @actors = Actor.order(:name)
         format.html { render :new }
         format.json { render json: @movie.errors, status: :unprocessable_entity }
       end
@@ -37,6 +38,7 @@ class Admin::MoviesController < ApplicationController
         format.html { redirect_to admin_movie_path(@movie), notice: 'Movie was successfully updated.' }
         format.json { render :show, status: :ok, location: @movie }
       else
+        @actors = Actor.order(:name)
         format.html { render :edit }
         format.json { render json: @movie.errors, status: :unprocessable_entity }
       end
@@ -64,4 +66,5 @@ class Admin::MoviesController < ApplicationController
     def find_actors
       @actors = Actor.order(:name)
     end
+   
 end
