@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     # Here you can write logic based on roles to return different after sign in paths
     if current_user.admin == true
-      admin_movies_path
+      admin_admins_path
     else
       root_path
     end

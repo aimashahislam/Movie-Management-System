@@ -1,28 +1,6 @@
-<% if user_signed_in? %>
-  <li>
-    <%= link_to('Edit Profile', edit_user_registration_path) %>
-  </li>
-  <li>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  </li>
-<% else %>
-  <li>
-    <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
 
 <%= link_to('Add Actors', new_admin_actor_path) %>
 
 <h1>All Actors</h1>
 
-<ul>
-  <% @actors.each do |actor| %>
-  <li>
-    <div>
-      <h3><%= link_to actor.name, admin_actor_path(actor) %></h3>
-      <p><%= link_to 'Edit', edit_admin_actor_path(actor) %></p>
-      <p><%= link_to'Delete', admin_actor_path(actor), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    </div>
-  </li>
-  <% end %>
-</ul>
+<%= render @actors %>

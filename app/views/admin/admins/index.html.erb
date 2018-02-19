@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div id="side-menu"  class="col-sm-2">
+      <ul id="links-list">
+        <% if user_signed_in? && current_user.admin == true %>
+          <%= render 'home/side_menu/admin_links' %>
+        <% else %>
+          <%= render 'home/side_menu/user_links' %>
+        <% end %>
+      </ul>
+    </div><!-- side-menu -->
+
+    <div id="main-content" class="col-sm-10">
+      <%= render @movies %>
+    </div><!-- main-content -->
+
+  </div><!-- row -->
+</div><!-- container -->
+
+s
