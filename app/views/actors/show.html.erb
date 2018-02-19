@@ -1,0 +1,14 @@
+<div class="container" id="main-content">
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <%= image_tag @actor.avatar.url, class: "profile" %>
+        </div>
+    </div>
+    <div class="row" class="form-control" id="actor-description">
+      <div class="col-sm-12 col-md-12">
+        <h1><%= @actor.name %></h1>
+        <p><i><small><%= @actor.bio.html_safe %></small></i></p>
+        <p></i><%= @actor.date_of_birth %></p>
+      </div>
+    </div>
+</div>

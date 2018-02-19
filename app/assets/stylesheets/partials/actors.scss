@@ -1,0 +1,48 @@
+.single-post-card {
+  min-height: 300px;
+  max-height: 300px;
+  box-shadow: 1px 1px 4px rgba(0,0,0, 0.3);
+  color: black;
+  padding: 10px;
+  text-align: left;
+  transition: border 0.1s, background 0.5s;
+  .card-text {
+    overflow: hidden;
+  }
+  a, a:active, a:hover {
+    color: black;
+  }
+  &:hover {
+    cursor: pointer;
+    background: white;
+    box-shadow: none;
+    border-radius: 1%;
+  }
+}
+
+.post-content {
+  display: none;
+}
+
+.poster {
+  height: 240px;
+  width: 200px;
+}
+
+.col-center {
+  float: none;
+  margin: 0 auto;
+}
+
+#actor-description {
+  text-align: center;
+}
+
+.profile {
+  min-height: 300px;
+  max-height: 300px;
+  box-shadow: 1px 1px 4px rgba(0,0,0, 0.3);
+  color: black;
+  text-align: left;
+  transition: border 0.1s, background 0.5s;
+}

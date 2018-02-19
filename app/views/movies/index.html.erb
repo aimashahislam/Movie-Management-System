@@ -1,11 +1,3 @@
-<h1>All Movies</h1>
-
-<ul>
-  <% @movies.each do |movie| %>
-  <li>
-    <div>
-      <h3><%= link_to movie.name %></h3>
-    </div>
-  </li>
-  <% end %>
-</ul>
+<div id="main-content" class="col-sm-12">
+  <%= render @movies %>
+</div>
