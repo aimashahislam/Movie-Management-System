@@ -1,7 +1,7 @@
 class Admin::MoviesController < ApplicationController
   
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
-  before_action :find_actors, only: [:new, :edit]
+  before_action :find_actors, only: [:new, :edit, :create, :update]
 
   def index
     @movies = Movie.all
@@ -25,7 +25,6 @@ class Admin::MoviesController < ApplicationController
         format.html { redirect_to admin_movie_path(@movie), notice: 'Movie was successfully created.' }
         format.json { render :show, status: :created, location: @movie }
       else
-        @actors = Actor.order(:name)
         format.html { render :new }
         format.json { render json: @movie.errors, status: :unprocessable_entity }
       end
@@ -38,7 +37,6 @@ class Admin::MoviesController < ApplicationController
         format.html { redirect_to admin_movie_path(@movie), notice: 'Movie was successfully updated.' }
         format.json { render :show, status: :ok, location: @movie }
       else
-        @actors = Actor.order(:name)
         format.html { render :edit }
         format.json { render json: @movie.errors, status: :unprocessable_entity }
       end
