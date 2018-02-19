@@ -6,6 +6,6 @@ class Movie < ApplicationRecord
   has_many :posters, dependent: :destroy
   
   accepts_nested_attributes_for :posters, allow_destroy: true
-  validates_associated :actors, :posters
+  validates_associated :posters
   
 end
