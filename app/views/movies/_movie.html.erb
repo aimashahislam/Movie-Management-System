@@ -1,14 +1,16 @@
-<div class="col-sm-3 single-post-card" id=<%= admin_movie_path(movie.id) %>>
+<div class="col-sm-3 single-post-card" id=<%= movie_path(movie.id) %> >
   <div class="card">
-    <%= image_tag movie.posters.first.avatar.url, class: "card-img-top poster" %>
+    <%= link_to movie_path(movie.id) do %>
+      <%= image_tag movie.posters.first.avatar.url, class: "card-img-top poster" %>
+    <% end %>
     <div class="card-block">
       <h4 class="card-text">
-        <%=link_to truncate(movie.name, :length => 60), admin_movie_path(movie.id)%>
+        <%=link_to truncate(movie.name, :length => 60), movie_path(movie.id) %>
       </h4>
       <div class="post-content">
         <h3><%= movie.name %></h3> 
         <p><%= movie.description %></p>
-        <%= link_to "I'm interested", admin_movie_path(movie.id), class: 'interested' %>
+        <%= link_to "I'm interested", movie_path(movie.id), class: 'interested' %>
       </div>
     </div>
   </div><!-- card -->

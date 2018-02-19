@@ -14,5 +14,7 @@ Rails.application.routes.draw do
     end
     resources :actors
   end
+  
+  resources :movies, :actors, only: [:show, :index]
 
 end
