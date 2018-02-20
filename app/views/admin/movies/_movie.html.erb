@@ -7,11 +7,6 @@
       <h4 class="card-text">
         <%=link_to truncate(movie.name, :length => 60), admin_movie_path(movie.id) %>
       </h4>
-      <div class="post-content">
-        <h3><%= movie.name %></h3> 
-        <p><%= movie.description %></p>
-        <%= link_to "I'm interested", admin_movie_path(movie.id), class: 'interested' %>
-      </div>
     </div>
   </div><!-- card -->
 </div><!-- col-sm-3 -->

@@ -34,3 +34,13 @@ a:hover, a:active, a:link, a:visited {
   color: $navbarColor;
 }
 
+.row {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+#col {
+  float: none;
+  margin: 0 auto;
+}

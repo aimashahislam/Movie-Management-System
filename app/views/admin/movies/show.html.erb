@@ -1,43 +1,57 @@
-<h1>Name: <%= @movie.name %></h1>
+<div id="main-content">
+  <div class="row">
+    <div class="col-sm-3">
+      <%= image_tag @movie.posters.first.avatar.url, class: "poster" %>
+    </div>
+    <div class="col-sm-9">
+      <h1>Name: <%= @movie.name %></h1>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @movie.genre %>
-</p>
- 
-<p>
-  <strong>Duration:</strong>
-  <%= @movie.duration %>
-</p>
+      <p>
+        <strong>Genre:</strong>
+        <%= @movie.genre %>
+      </p>
+       
+      <p>
+        <strong>Duration:</strong>
+        <%= @movie.duration %>
+      </p>
 
-<p>
-  <strong>Release Date:</strong>
-  <%= @movie.release_date %>
-</p>
+      <p>
+        <strong>Release Date:</strong>
+        <%= @movie.release_date %>
+      </p>
 
+      <p>
+        <strong>Description:</strong>
+        <%= @movie.description.html_safe %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @movie.description.html_safe %>
-</p>
+      <p>
+        <strong>Actors:</strong>
+        <ul>
+          <% @movie.actors.each do |actor| %>
+            <li><%= actor.name %></li>
+          <% end %>
+        </ul>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Actors:</strong>
-  <ul>
-    <% @movie.actors.each do |actor| %>
-      <li><%= actor.name %></li>
-    <% end %>
-  </ul>
-</p>
+  <div class="row">
+    <p id="col">
+      <strong>Trailer:</strong><br />
+      <%= @movie.trailer.html_safe %>
+    </p>
+  </div>
 
-<div>
-  <strong>Trailer:</strong><br />
-  <%= @movie.trailer.html_safe %>
-</div>
-
-<div>
-  <strong>Posters:</strong><br />
-  <% @movie.posters.each do |poster| %>
-    <%= image_tag poster.avatar.url %>
-  <% end %>
+  <div class="row">
+    <p>
+      <strong>Posters:</strong><br />
+      <% @movie.posters.each do |poster| %>
+        <div class="col-sm-2", id="col">
+          <%= image_tag poster.avatar.url, class: "poster" %>
+        </div>
+      <% end %>
+    </p>
+  </div>
 </div>
