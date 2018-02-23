@@ -53,7 +53,7 @@
 
   <div class="field">
     <%= form.label :actor_ids, "Actors" %><br />
-    <%= form.collection_select :actor_ids, @actors, :id, :name, {}, {multiple: true} %>
+    <%= form.collection_select :actor_ids, @actors, :id, :name, {}, {multiple: true, class: 'movie-actor-ids'} %>
   </div>
 
   <div class="actions">

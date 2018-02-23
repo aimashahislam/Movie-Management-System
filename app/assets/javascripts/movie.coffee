@@ -5,7 +5,7 @@ jQuery ->
     star_input();
 
 chosen_initializer = () ->
-  $('#movie_actor_ids').chosen();
+  $('.movie-actor-ids').chosen();
 
 @star_show = ()->
   $('.star-rating').raty({
