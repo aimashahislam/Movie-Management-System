@@ -1,12 +1,16 @@
 <div class="col-sm-3 single-post-card" id=<%= admin_movie_path(movie.id) %> >
   <div class="card">
-    <%= link_to admin_movie_path(movie.id) do %>
-      <%= image_tag movie.posters.first.avatar.url, class: "card-img-top poster" %>
+    <%= link_to movie_path(movie.id) do %>
+      <% if movie.posters.present? %>
+        <%= image_tag movie.posters.first.try(:avatar).try(:url), class: "card-img-top poster" %>
+      <% else %>
+        <img alt="Rails" src="/assets/default.jpeg" class= "card-img-top poster"  />
+      <% end %>
     <% end %>
     <div class="card-block">
       <h4 class="card-text">
         <%=link_to truncate(movie.name, :length => 60), admin_movie_path(movie.id) %>
       </h4>
     </div>
-  </div><!-- card -->
-</div><!-- col-sm-3 -->
+  </div>
+</div>

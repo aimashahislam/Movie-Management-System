@@ -1,13 +1,14 @@
 class Admin::MoviesController < ApplicationController
-  
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
   before_action :find_actors, only: [:new, :edit, :create, :update]
+  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
 
   def index
-    @movies = Movie.all
+    @movies = Movie.includes(:posters)
   end
 
   def show
+    @reviews = @movie.reviews
   end
 
   def new
@@ -64,5 +65,4 @@ class Admin::MoviesController < ApplicationController
     def find_actors
       @actors = Actor.order(:name)
     end
-   
 end

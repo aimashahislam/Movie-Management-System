@@ -21,9 +21,9 @@
         <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
       </li>
 
-    <% else # user not signed it %>
+    <% else %>
       <li ><%= link_to 'Login', new_user_session_path %></li>
       <li ><%= link_to 'Signup', new_user_registration_path %></li>
-    <% end # if user is signed it %>
+    <% end %>
   </ul>
 </div>

@@ -1,0 +1,29 @@
+<h2>Add a Review:</h2>
+
+<%= bootstrap_form_for([@movie, @movie.reviews.build], remote: true) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:
+      </h2>
+      <ul>
+        <% @review.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <div id="star-rating" required=true></div>
+  </div>
+  <div>
+    <%= f.text_area :comment, autofocus: true, autocomplete: "comment", placeholder: 'comment', class: 'form-control', required: true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script>
+  star_input();
+</script>

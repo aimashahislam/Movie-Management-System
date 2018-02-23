@@ -1,0 +1,5 @@
+$('#reviews').append("<%= j (render partial: 'review', locals: { movie: @movie, review: @review}) %>");
+$('#review-form').slideUp(350);
+
+star_show();
+star_input();
