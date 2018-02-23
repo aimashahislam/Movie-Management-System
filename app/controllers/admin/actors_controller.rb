@@ -1,7 +1,6 @@
-class Admin::ActorsController < ApplicationController
+class Admin::ActorsController < Admin::BaseController
 
   before_action :set_actor, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
 
   def index
     @actors = Actor.all

@@ -1,7 +1,6 @@
-class Admin::MoviesController < ApplicationController
+class Admin::MoviesController < Admin::BaseController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
   before_action :find_actors, only: [:new, :edit, :create, :update]
-  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
 
   def index
     @movies = Movie.includes(:posters)
