@@ -2,10 +2,10 @@
   <div class="row">
     <div id="side-menu"  class="col-sm-2">
       <ul id="links-list">
-        <% if user_signed_in? && current_user.admin == true %>
-          <%= render 'home/side_menu/admin_links' %>
+        <% if current_user.admin == true %>
+          <%= render 'layouts/side_menu/admin_links' %>
         <% else %>
-          <%= render 'home/side_menu/user_links' %>
+          <%= render 'layouts/side_menu/user_links' %>
         <% end %>
       </ul>
     </div>
