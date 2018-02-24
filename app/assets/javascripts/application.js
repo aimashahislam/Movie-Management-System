@@ -12,6 +12,7 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require jquery-ui/datepicker
 //= require ckeditor/init
 //= require cocoon
 //= require chosen-jquery

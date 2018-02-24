@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :release_date %>
-    <%= form.date_select :release_date, start_year: 1900, required: true %>
+    <%= form.text_field :release_date, start_year: 1900, required: true, id: "datepicker" %>
   </div>
 
   <div class="field">
