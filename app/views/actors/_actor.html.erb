@@ -1,4 +1,4 @@
-<div class="col-sm-3 single-post-card" id=<%= actor_path(actor.id) %>>
+<div class="col-sm-3 single-post-card">
   <div class="card">
     <%= link_to actor_path(actor.id) do %>
       <%= image_tag actor.avatar.url, class: "card-img-top poster" %>
@@ -7,11 +7,6 @@
       <h4 class="card-text">
         <%=link_to truncate(actor.name, :length => 60), actor_path(actor.id) %>
       </h4>
-      <div class="post-content">
-        <h3><%= actor.name %></h3> 
-        <p><%= actor.bio %></p>
-        <%= link_to "I'm interested", actor_path(actor.id), class: 'interested' %>
-      </div>
     </div>
   </div>
 </div>
