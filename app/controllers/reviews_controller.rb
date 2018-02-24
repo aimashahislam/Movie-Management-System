@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
   before_action :set_movie, only: [:create, :new, :edit, :update]
   before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
+  after_action :update_average_rating, only: [:create, :update, :destroy]
 
   def new
     @review = Review.new
@@ -13,10 +14,6 @@ class ReviewsController < ApplicationController
   def create
     @review = @movie.reviews.create(review_params)
     @review.user_id = current_user.id
-    if !@movie.reviews.average(:rating).nil?
-      @movie.rating = @movie.reviews.average(:rating).round(2)
-    end
-    @movie.save
     respond_to do |format|
       if @review.save
         format.html { redirect_to movie_path(@movie), notice: 'Review was successfully created.' }
@@ -59,5 +56,10 @@ class ReviewsController < ApplicationController
 
     def review_params
       params.require(:review).permit(:rating, :comment)
+    end
+
+    def update_average_rating
+      @movie.rating = @movie.reviews.average(:rating).round(2)
+      @movie.save
     end
 end

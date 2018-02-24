@@ -4,19 +4,19 @@ jQuery ->
     star_show();
     star_input();
 
-chosen_initializer = () ->
-  $('.movie-actor-ids').chosen();
+  chosen_initializer = () ->
+    $('.movie-actor-ids').chosen();
 
-@star_show = ()->
-  $('.star-rating').raty({
-    path: '/assets/',
-    readOnly: true,
-    score: () ->
-      return $(this).attr('data-score');
-  });
+  @star_show = ()->
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: () ->
+        return $(this).attr('data-score');
+    });
 
-@star_input = ()->
-  $('#star-rating').raty({
-    path: '/assets/',
-    scoreName: 'review[rating]'
-  });
+  @star_input = ()->
+    $('#star-rating').raty({
+      path: '/assets/',
+      scoreName: 'review[rating]'
+    });
