@@ -3,7 +3,7 @@ class Actor < ApplicationRecord
 
   has_and_belongs_to_many :movies
 
-  validates :name, presence: true, length: { minimum: 2 }
+  validates :name, presence: true, length: { in: 2..255 }
   validates :bio, presence: true
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
