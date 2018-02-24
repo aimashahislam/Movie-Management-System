@@ -1,11 +1,7 @@
 <div class="col-sm-3 single-post-card">
   <div class="card">
     <%= link_to movie_path(movie.id) do %>
-      <% if movie.posters.present? %>
-        <%= image_tag movie.posters.first.try(:avatar).try(:url), class: "card-img-top poster" %>
-      <% else %>
-        <img alt="Rails" src="/assets/default.jpeg" class= "card-img-top poster"  />
-      <% end %>
+      <%= image_tag setPoster(movie), class: "card-img-top poster" %>
     <% end %>
     <div class="card-block">
       <h4 class="card-text">

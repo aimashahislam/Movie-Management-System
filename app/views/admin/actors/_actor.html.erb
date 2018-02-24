@@ -1,7 +1,7 @@
 <div class="col-sm-3 single-post-card">
   <div class="card">
-    <%= link_to admin_actor_path(actor.id) do %>
-      <%= image_tag actor.avatar.url, class: "card-img-top poster" %>
+    <%= link_to actor_path(actor.id) do %>
+      <%= image_tag setActor(actor), class: "card-img-top poster" %>
     <% end %>
   </div>
   <div class="card-block">
