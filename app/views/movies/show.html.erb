@@ -10,7 +10,7 @@
         <%= image_tag @movie.posters.first.avatar.url, class: "poster" %>
         <div class="reviews">
           <div class="star-rating" data-score= <%= @movie.rating %> ></div>
-          <div><em><%= "#{@reviews.length} reviews" %></em></div>
+          <div><em><%= "#{@movie.reviews.length} reviews" %></em></div>
         </div>
         <div class="table-responsive">
           <table class="table">
@@ -59,8 +59,8 @@
         <h1 class="review_title"><%= @movie.name %></h1>
         <p><%= @movie.description.html_safe %></p>
         <div id="reviews">
-          <% if @reviews.present? %>
-            <% @reviews.each do |review| %>
+          <% if @movie.reviews.present? %>
+            <% @movie.reviews.each do |review| %>
               <%= render partial: "reviews/review", locals: { movie: @movie, review: review} %>
             <% end %>
           <% end %>
