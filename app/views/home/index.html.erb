@@ -2,7 +2,7 @@
   <div class="row">
     <div id="side-menu"  class="col-sm-2">
       <ul id="links-list">
-        <% if user_signed_in? && current_user.admin == true %>
+        <% if user_signed_in? && current_user.admin %>
           <%= render 'layouts/side_menu/admin_links' %>
         <% else %>
           <%= render 'layouts/side_menu/user_links' %>
