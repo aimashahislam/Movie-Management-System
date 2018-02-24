@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  scope :ordered, -> { order('created_at desc') }
 
   has_many :reviews, dependent: :destroy
 
@@ -11,4 +12,5 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
 end
