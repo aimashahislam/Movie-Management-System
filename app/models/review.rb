@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  scope :ordered, -> { order('created_at desc') }
+  default_scope { order(created_at: :desc) }
 
   validates :rating, :comment, presence: true
 
