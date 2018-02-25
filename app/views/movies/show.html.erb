@@ -7,7 +7,7 @@
     </div>
     <div class="row">
       <div class="col-md-4">
-        <%= image_tag setPoster(@movie), class: "poster" %>
+        <%= image_tag setPosterAvatarURL(@movie), class: "poster" %>
         <div class="reviews">
           <div class="star-rating" data-score= <%= @movie.rating %> ></div>
           <div><em><%= "#{@movie.reviews.length} reviews" %></em></div>

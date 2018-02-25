@@ -1,5 +1,5 @@
 module ActorsHelper
-  def setActor(actor)
+  def setActorAvatarURL(actor)
     if actor.avatar.present?
       actor.try(:avatar).try(:url)
     else

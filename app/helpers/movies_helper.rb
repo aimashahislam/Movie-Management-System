@@ -1,5 +1,5 @@
 module MoviesHelper
-  def setPoster(movie)
+  def setPosterAvatarURL(movie)
     if movie.posters.present?
       movie.posters.first.try(:avatar).try(:url)
     else
