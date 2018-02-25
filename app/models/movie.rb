@@ -10,5 +10,4 @@ class Movie < ApplicationRecord
   validates :name, length: { in: 2..255 }
 
   accepts_nested_attributes_for :posters, allow_destroy: true
-
 end

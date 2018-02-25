@@ -1,10 +1,10 @@
 class Review < ApplicationRecord
   default_scope { order(created_at: :desc) }
 
-  validates :rating, :comment, presence: true
-
   belongs_to :user
   belongs_to :movie
+
+  validates :rating, :comment, presence: true
 
   after_save :update_average_rating
   after_destroy :update_average_rating
