@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :actors
     end
     resources :actors
-    resources :home
+    resources :home, only: :index
   end
 
   resources :movies, :actors, only: [:show, :index]
