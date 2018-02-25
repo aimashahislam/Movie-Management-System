@@ -7,7 +7,7 @@ jQuery ->
 chosen_initializer = () ->
   $('.movie-actor-ids').chosen();
 
-@star_show = ()->
+@star_show = () ->
   $('.star-rating').raty({
     path: '/assets/',
     readOnly: true,
@@ -15,7 +15,7 @@ chosen_initializer = () ->
       return $(this).attr('data-score');
   });
 
-@star_input = ()->
+@star_input = () ->
   $('#star-rating').raty({
     path: '/assets/',
     scoreName: 'review[rating]'

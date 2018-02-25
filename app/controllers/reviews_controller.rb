@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
+
   before_action :set_review, only: [:edit, :update, :destroy]
   before_action :set_movie, only: [:create, :new, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
-  after_action :update_average_rating, only: [:create, :update, :destroy]
 
   def new
     @review = Review.new
@@ -56,10 +56,5 @@ class ReviewsController < ApplicationController
 
     def review_params
       params.require(:review).permit(:rating, :comment)
-    end
-
-    def update_average_rating
-      @movie.rating = @movie.reviews.average(:rating).round(2)
-      @movie.save
     end
 end
