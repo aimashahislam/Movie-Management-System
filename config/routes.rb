@@ -18,4 +18,6 @@ Rails.application.routes.draw do
     resources :reviews, except: [:show, :index]
   end
 
+  resources :reports
+
 end
