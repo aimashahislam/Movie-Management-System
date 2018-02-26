@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180226094822) do
+ActiveRecord::Schema.define(version: 20180226130914) do
 
   create_table "actors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20180226094822) do
   create_table "actors_movies", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "actor_id", null: false
     t.bigint "movie_id", null: false
+  end
+
+  create_table "favourites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "movie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_favourites_on_movie_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
   create_table "movies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -114,6 +123,8 @@ ActiveRecord::Schema.define(version: 20180226094822) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favourites", "movies"
+  add_foreign_key "favourites", "users"
   add_foreign_key "posters", "movies"
   add_foreign_key "reports", "reviews"
   add_foreign_key "reviews", "movies"

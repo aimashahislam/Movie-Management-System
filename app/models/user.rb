@@ -4,6 +4,8 @@ class User < ApplicationRecord
   default_scope { order(created_at: :desc) }
 
   has_many :reviews, dependent: :destroy
+  has_many :favourites
+  has_many :favourite_movies, through: :favourites, source: :movies
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
 
   validates :email, format: Devise.email_regexp
