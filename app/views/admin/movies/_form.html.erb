@@ -1,62 +1,61 @@
-<%= form_for([:admin, @movie]) do |form| %>
-  <% if @movie.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:
-      </h2>
-      <ul>
-        <% @movie.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+<div class="container" id="sign-up-form">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1" id="sign-up-box">
+      <%= bootstrap_form_for([:admin, @movie]) do |form| %>
+        <% if @movie.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:
+            </h2>
+            <ul>
+              <% @movie.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+        <div>
+          <%= form.text_field :name, required: true, minlength: 2, maxlength: 255, autofocus: true, autocomplete: "name", placeholder: 'name', class: 'form-control' %>
+        </div>
+
+        <div>
+          <%= form.text_field :genre, required: true, autofocus: true, autocomplete: "genre", placeholder: 'genre', class: 'form-control' %>
+        </div>
+
+        <div>
+          <%= form.time_select :duration, required: true, autofocus: true, autocomplete: "time", placeholder: 'time', class: 'form-control' %>
+        </div>
+
+        <div>
+          <%= form.cktext_area :description, rows: 15, required: true, class: 'form-control', autofocus: true  %>
+        </div>
+
+        <div>
+          <%= form.text_field :release_date, start_year: 1900, required: true, id: "datepicker", autofocus: true, autocomplete: "release_date", class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= form.text_field :trailer, required: true, autofocus: true, autocomplete: "trailer", placeholder: 'trailer', class: 'form-control'  %>
+        </div>
+
+        <div>
+          <p><strong>Posters:</strong></p>
+          <%= form.fields_for :posters do |poster| %>
+            <%= render 'poster_fields', f: poster %>
+          <% end %>
+          <div>
+            <%= link_to_add_association 'add poster', form, :posters, class: 'form-control btn btn-primary' %>
+          </div>  
+        </div>
+
+        <div>
+          <%= form.collection_select :actor_ids, @actors, :id, :name, {}, {multiple: true, class: 'movie-actor-ids form-control'} %>
+        </div>
+
+        <div>
+          <%= form.submit "New Movie", class: 'form-control btn btn-primary' %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, required: true, minlength: 2, maxlength: 255 %>
   </div>
-
-  <div class="field">
-    <%= form.label :genre %>
-    <%= form.text_field :genre, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :duration %>
-    <%= form.time_select :duration, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.cktext_area :description, rows: 15, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :release_date %>
-    <%= form.text_field :release_date, start_year: 1900, required: true, id: "datepicker" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :trailer %>
-    <%= form.text_field :trailer, required: true %>
-  </div>
-
-  <div>
-    <p><strong>Posters:</strong></p>
-    <%= form.fields_for :posters do |poster| %>
-      <%= render 'poster_fields', f: poster %>
-    <% end %>
-    <div class="links">
-      <%= link_to_add_association 'add poster', form, :posters %>
-    </div>  
-  </div>
-
-  <div class="field">
-    <%= form.label :actor_ids, "Actors" %><br />
-    <%= form.collection_select :actor_ids, @actors, :id, :name, {}, {multiple: true, class: 'movie-actor-ids'} %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
