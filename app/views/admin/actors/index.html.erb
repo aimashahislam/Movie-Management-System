@@ -2,5 +2,7 @@
 
 <h1>All Actors</h1>
 <div id="main-content">
-  <%= render @actors %>
+  <% @actors.each do |actor| %>
+    <%= render partial: "actors/actor", locals: { actor: actor} %>
+  <% end %>
 </div>
