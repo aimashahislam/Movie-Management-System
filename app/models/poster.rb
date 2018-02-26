@@ -1,4 +1,6 @@
 class Poster < ApplicationRecord
+  acts_as_paranoid
+  
   belongs_to :movie
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
 
