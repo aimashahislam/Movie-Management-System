@@ -10,4 +10,10 @@ module ReviewsHelper
       link_to 'Delete', movie_review_path(@movie, review), method: :delete, data: {confirm: "Are you sure?"}
     end
   end
+
+  def set_report_link_for_review(review)
+    if user_signed_in?
+      link_to 'Report', new_review_report_path(review)
+    end
+  end
 end

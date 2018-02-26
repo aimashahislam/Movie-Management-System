@@ -1,0 +1,29 @@
+<h2>Add a Report:</h2>
+
+<div class="container" id="sign-up-form">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2" id="sign-up-box">
+      <%= bootstrap_form_for([@review, @report], url: review_reports_path) do |f| %>
+        <% if @report.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:
+            </h2>
+            <ul>
+              <% @report.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div>
+          <%= f.hidden_field :review_id, value: params[:review_id] %>
+          <%= f.text_area :statement, autofocus: true, autocomplete: "statement", placeholder: 'statement', class: 'form-control', required: true %>
+        </div>
+        <div>
+          <%= f.submit "Submit Report", class: 'form-control btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

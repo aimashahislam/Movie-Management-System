@@ -5,6 +5,7 @@ class Review < ApplicationRecord
 
   belongs_to :user
   belongs_to :movie
+  has_one :report
 
   validates :rating, :comment, presence: true
 
