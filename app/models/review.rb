@@ -5,7 +5,7 @@ class Review < ApplicationRecord
 
   belongs_to :user
   belongs_to :movie
-  has_one :report
+  has_one :report, dependent: :destroy
 
   validates :rating, :comment, presence: true
 
