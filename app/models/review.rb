@@ -15,7 +15,11 @@ class Review < ApplicationRecord
   protected
     def update_average_rating
       @movie = Movie.find(self.movie_id)
-      @movie.rating = @movie.reviews.average(:rating).round(2)
+      if @movie.reviews.present?
+        @movie.rating = @movie.reviews.average(:rating).round(2)
+      else
+        @movie.rating = 0
+      end
       @movie.save
     end
 end
