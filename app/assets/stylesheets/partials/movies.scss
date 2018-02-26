@@ -32,3 +32,10 @@
   float: none;
   margin: 0 auto;
 }
+
+.rails-bootstrap-forms-time-select {
+  .form-control{
+    display: inline;
+    width: auto;
+  }
+}
