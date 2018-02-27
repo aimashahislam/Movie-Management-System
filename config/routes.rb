@@ -23,4 +23,8 @@ Rails.application.routes.draw do
   end
 
   resources :reports, only: [:index, :destroy]
+
+  get "add_favourites" => "users#addFavourites"
+
+  get "show_profile" => "users#show"
 end

@@ -48,6 +48,7 @@
             </tbody>
           </table>
           <% if user_signed_in? %>
+            <%= link_to "Add to favourites", add_favourites_path(movie_id: @movie.id) %>
             <%= link_to new_movie_review_path(@movie), remote: true do %>
               <button class="btn btn-default">New</button>
             <% end %>
