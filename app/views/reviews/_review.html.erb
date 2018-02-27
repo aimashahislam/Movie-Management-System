@@ -2,8 +2,8 @@
 <% if review.reported == false %>
   <div class="star-rating" data-score= <%= review.rating %> ></div>
   <p><%= review.comment %></p>
-  <%= set_edit_link_for_review(review) %>
-  <%= set_delete_link_for_review(review) %>
-  <%= set_report_link_for_review(review) %>
+  <%= edit_link_for_review(review) %>
+  <%= delete_link_for_review(review) %>
+  <%= report_link_for_review(review) %>
 <% end %>
 </div>
