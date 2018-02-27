@@ -46,7 +46,7 @@ class Admin::MoviesController < Admin::BaseController
   def destroy
     @movie.destroy
     respond_to do |format|
-      format.html { redirect_to _movies_url, notice: 'Movie was successfully destroyed.' }
+      format.html { redirect_to movies_url, notice: 'Movie was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
