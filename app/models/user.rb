@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
   has_many :favourites
-  has_many :favourite_movies, through: :favourites, source: :movies
+  has_many :favourite_movies, through: :favourites, source: :movie
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
 
   validates :email, format: Devise.email_regexp
