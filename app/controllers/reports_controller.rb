@@ -14,8 +14,6 @@ class ReportsController < ApplicationController
 
   def create
     @report = Report.new(report_params)
-    @review.reported = true
-    @review.save
     respond_to do |format|
       if @report.save
         format.html { redirect_to root_path, notice: 'Report was successfully created.' }
@@ -29,10 +27,7 @@ class ReportsController < ApplicationController
 
   def destroy
     @report = Report.find(params[:id])
-    @review = Review.find(@report.review_id)
     @report.destroy
-    @review.reported = false
-    @review.save
     respond_to do |format|
       format.html { redirect_to reports_path, notice: 'Report was successfully destroyed.' }
       format.json { head :no_content }
