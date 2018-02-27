@@ -6,7 +6,6 @@ class Movie < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_and_belongs_to_many :actors
   has_many :posters, dependent: :destroy
-  belongs_to :user
 
   validates :name, :genre, :duration, :description, :release_date, presence: true
   validates :name, length: { in: 2..255 }
