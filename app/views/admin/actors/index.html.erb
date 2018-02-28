@@ -9,7 +9,7 @@
   </div>
 <% end %>
 
-<div id="main-content">
+<div id="main-content" class="col-sm-12">
   <% @actors.each do |actor| %>
     <%= render partial: "actors/actor", locals: { actor: actor} %>
   <% end %>
