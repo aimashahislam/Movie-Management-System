@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.includes(:posters)
+    @movies = Movie.search(params[:search],sql: {include: :posters})
   end
 
   def show
