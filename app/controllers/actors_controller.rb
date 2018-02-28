@@ -1,7 +1,7 @@
 class ActorsController < ApplicationController
 
   def index
-    @actors = Actor.search(params[:search])
+    @actors = Actor.search(params[:search], with: {deleted_at: 0})
   end
 
   def show

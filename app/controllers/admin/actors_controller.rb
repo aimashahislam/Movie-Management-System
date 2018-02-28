@@ -3,7 +3,7 @@ class Admin::ActorsController < Admin::BaseController
   before_action :set_actor, only: [:show, :edit, :update, :destroy]
 
   def index
-    @actors = Actor.search(params[:search])
+    @actors = Actor.search(params[:search], with: {deleted_at: 0})
   end
 
   def show
