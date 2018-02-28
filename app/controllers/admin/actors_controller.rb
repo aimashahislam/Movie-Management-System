@@ -3,7 +3,7 @@ class Admin::ActorsController < Admin::BaseController
   before_action :set_actor, only: [:show, :edit, :update, :destroy]
 
   def index
-    @actors = Actor.all
+    @actors = Actor.search(params[:search])
   end
 
   def show
@@ -21,7 +21,7 @@ class Admin::ActorsController < Admin::BaseController
 
     respond_to do |format|
       if @actor.save
-        format.html { redirect_to admin_actor_path(@actor), notice: 'Actor was successfully created.' }
+        format.html { redirect_to actor_path(@actor), notice: 'Actor was successfully created.' }
         format.json { render :show, status: :created, location: @actor }
       else
         format.html { render :new }
@@ -33,7 +33,7 @@ class Admin::ActorsController < Admin::BaseController
   def update
     respond_to do |format|
       if @actor.update(actor_params)
-        format.html { redirect_to admin_actor_path(@actor), notice: 'Actor was successfully updated.' }
+        format.html { redirect_to actor_path(@actor), notice: 'Actor was successfully updated.' }
         format.json { render :show, status: :ok, location: @actor }
       else
         format.html { render :edit }
@@ -45,7 +45,7 @@ class Admin::ActorsController < Admin::BaseController
   def destroy
     @actor.destroy
     respond_to do |format|
-      format.html { redirect_to admin_actors_url, notice: 'Actor was successfully destroyed.' }
+      format.html { redirect_to actors_url, notice: 'Actor was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
