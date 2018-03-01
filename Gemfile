@@ -45,6 +45,7 @@ gem 'bootstrap_form'
 gem 'jquery-ui-rails', '5.0.5'
 gem "paranoia", "~> 2.2"
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
