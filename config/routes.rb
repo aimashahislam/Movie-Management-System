@@ -24,7 +24,8 @@ Rails.application.routes.draw do
 
   resources :reports, only: [:index, :destroy]
 
-  get "add_favourites" => "users#addFavourites"
+  get "add_favourites" => "users#add_favourites"
+  get "remove_favourites" => "users#remove_favourites"
 
   get "show_profile" => "users#show"
 
