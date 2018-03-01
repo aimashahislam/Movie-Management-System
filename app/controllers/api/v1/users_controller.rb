@@ -6,7 +6,11 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def show
-    @user = User.find(params[:id])
-    render json: @user, adapter: :json
+    @user = User.find_by_id(params[:id])
+    if @user.present?
+      render json: @user
+    else
+      render json: { error: 'Record not found.' }, status: 404
+    end
   end
 end

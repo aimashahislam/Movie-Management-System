@@ -6,7 +6,11 @@ class Api::V1::ReviewsController < Api::V1::BaseController
   end
 
   def show
-    @review = Review.find(params[:id])
-    render json: @review, adapter: :json
+    @review = Review.find_by_id(params[:id])
+    if @review.present?
+      render json: @review
+    else
+      render json: { error: 'Record not found.' }, status: 404
+    end
   end
 end

@@ -6,7 +6,11 @@ class Api::V1::ActorsController < Api::V1::BaseController
   end
 
   def show
-    @actor = Actor.find(params[:id])
-    render json: @actor, adapter: :json
+    @actor = Actor.find_by_id(params[:id])
+    if @actor.present?
+      render json: @actor
+    else
+      render json: { error: 'Record not found.' }, status: 404
+    end
   end
 end

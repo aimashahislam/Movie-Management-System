@@ -6,7 +6,11 @@ class Api::V1::ReportsController < Api::V1::BaseController
   end
 
   def show
-    @report = Report.find(params[:id])
-    render json: @report, adapter: :json
+    @report = Report.find_by_id(params[:id])
+    if @report.present?
+      render json: @report
+    else
+      render json: { error: 'Record not found.' }, status: 404
+    end
   end
 end
