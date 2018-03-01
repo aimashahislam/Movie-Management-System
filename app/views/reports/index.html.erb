@@ -1,7 +1,12 @@
 <h1>All Reports</h1>
-<div id="main-content" class="col-sm-12 col-sm-offset-1">
-  <%= render @reports %>
+<div id="main-content" class="col-sm-11 col-sm-offset-1">
+  <table class="table">
+    <tbody>
+      <%= render @reports %>
+    </tbody>
+  </table>
 </div>
+
 <div class="col-sm-11 col-sm-offset-1">
   <%= paginate @reports %><br/>
 </div>

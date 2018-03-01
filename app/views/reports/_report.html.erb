@@ -1,8 +1,8 @@
-<div class="row">
-  <p>Report: <%= report.statement %></p>
-  <p><%= link_to "View Review", review_path(id: report.review_id) %></p>
-  <p><%= link_to "Destroy Report", report_path(report), method: :delete, data: {confirm: "Are you sure?"} %></p>
-  <p><%= link_to "Destroy Review", review_path(id: report.review_id), method: :delete, data: {confirm: "Are you sure?"} %></p>
-</div>
+<tr>
+  <td>Report: <%= report.statement %></td>
+  <td><%= link_to "View Review", review_path(id: report.review_id) %></td>
+  <td><%= link_to "Destroy Report", report_path(report), method: :delete, data: {confirm: "Are you sure?"} %></td>
+  <td><%= link_to "Destroy Review", review_path(id: report.review_id), method: :delete, data: {confirm: "Are you sure?"} %></td>
+</tr>
 
 
