@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :actors
     end
     resources :actors
+    resources :users
     resources :home, only: :index
   end
 

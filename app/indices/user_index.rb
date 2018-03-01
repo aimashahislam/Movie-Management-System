@@ -6,5 +6,5 @@ ThinkingSphinx::Index.define :user, with: :active_record, delta: true do
   indexes status, sortable: true
   indexes date_of_birth, sortable: true
 
-  has created_at, updated_at
+  has created_at, updated_at, deleted_at
 end

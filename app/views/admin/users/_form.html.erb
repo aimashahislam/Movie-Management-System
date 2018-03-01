@@ -1,0 +1,67 @@
+<div class="container" id="sign-up-form">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1" id="sign-up-box">
+      <%= bootstrap_form_for([:admin, @user]) do |f| %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
+            </h2>
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'name', class: 'form-control', minlength: 2, maxlength: 255 %>
+        </div>
+
+        <div>
+          <%= f.text_field :phone_no, autofocus: true, autocomplete: "phone_no", placeholder: 'phone', class: 'form-control' %>
+        </div>
+
+        <div>
+          <%= f.form_group :gender, label: { text: "Gender" } do %>
+            <%= f.radio_button :gender, 'male', label: "Male" %>
+            <%= f.radio_button :gender, 'female', label: "Female" %>
+          <% end %>
+        </div>
+
+        <div>
+          <%= f.text_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", start_year: 1950, id: "datepicker" %>
+        </div>
+
+        <div>
+          <%= f.text_field :status, autofocus: true, autocomplete: "status", placeholder: 'status', class: 'form-control' %>
+        </div>
+
+        <div>
+          <%= f.email_field :email, autofocus: true, placeholder: 'email', class: 'form-control' %>
+        </div>
+
+        <div>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", placeholder: 'password', class: 'form-control' %>
+        </div>
+
+        <div>
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'password', class: 'form-control' %>
+        </div>
+
+        <div>
+          <%= f.file_field :avatar, label: "Profile Picture" %>
+        </div>
+
+        <div>
+          <%= f.submit "Add User", class: 'form-control btn btn-primary' %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

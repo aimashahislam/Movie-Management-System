@@ -1,0 +1,30 @@
+<div class="container" id="main-content">
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <%= image_tag set_user_avatar_URL(@user), class: "profile" %>
+      </div>
+    </div>
+    <div class="row" class="form-control" id="actor-description">
+      <div class="col-sm-12 col-md-12">
+      <p><%= @user.status %></p>
+        <h1>Name: <%= @user.name %></h1>
+
+        <p>
+          <strong>Date Of Birth:</strong>
+          <%= @user.date_of_birth %>
+        </p>
+
+        <p>
+          <strong>Phone No:</strong>
+          <%= @user.phone_no %>
+        </p>
+
+        <strong>Favourites:</strong>
+        <ul>
+          <% @movies.each do |favourite| %>
+            <li><%= favourite.name %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+</div>
