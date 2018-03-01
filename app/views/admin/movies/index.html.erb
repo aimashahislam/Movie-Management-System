@@ -11,8 +11,11 @@
   </div>
 <% end %>
 
-<div id="main-content" class="col-sm-12">
+<div id="main-content" class="col-sm-12 col-sm-offset-1">
   <% @movies.each do |movie| %>
     <%= render partial: "movies/movie", locals: { movie: movie} %>
   <% end %>
+</div>
+<div class="col-sm-11 col-sm-offset-1">
+  <%= paginate @movies %><br/>
 </div>

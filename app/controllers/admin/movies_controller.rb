@@ -3,7 +3,7 @@ class Admin::MoviesController < Admin::BaseController
   before_action :find_actors, only: [:new, :edit, :create, :update]
 
   def index
-    @movies = Movie.search(params[:search], with: {deleted_at: 0}, sql: {include: :posters})
+    @movies = Movie.search(params[:search], with: {deleted_at: 0}, sql: {include: :posters}, page: params[:page], per_page: 10)
   end
 
   def show

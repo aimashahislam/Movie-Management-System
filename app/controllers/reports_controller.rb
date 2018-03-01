@@ -5,7 +5,7 @@ class ReportsController < ApplicationController
   before_action :check_admin, only: [:index, :destroy]
 
   def index
-    @reports = Report.all
+    @reports = Report.page(params[:page]).per(10)
   end
 
   def new
