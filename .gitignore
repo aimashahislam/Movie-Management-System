@@ -31,3 +31,4 @@ bower.json
 
 /db/sphinx
 /config/development.sphinx.conf
+/config/local_env.yml

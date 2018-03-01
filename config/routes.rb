@@ -27,4 +27,10 @@ Rails.application.routes.draw do
   get "add_favourites" => "users#addFavourites"
 
   get "show_profile" => "users#show"
+
+  namespace :api do
+    namespace :v1 do
+      resources :movies, :actors, :users, :reviews, :reports, only: [:index, :show]
+    end
+  end
 end
