@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: MMS_production
   username: MMS
   password: <%= ENV['MMS_DATABASE_PASSWORD'] %>
