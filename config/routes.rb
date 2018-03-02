@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'static_pages/about'
+
+  get 'static_pages/contact_us'
+
+  get 'static_pages/terms_of_use'
+
   devise_for :users
 
   root "home#index"
