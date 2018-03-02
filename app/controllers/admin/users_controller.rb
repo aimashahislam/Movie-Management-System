@@ -3,7 +3,8 @@ class Admin::UsersController < Admin::BaseController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = User.search(params[:search], with: {deleted_at: 0}, page: params[:page], per_page: 10)
+    #@users = User.search(params[:search], with: {deleted_at: 0}, page: params[:page], per_page: 10)
+    @users = User.page(params[:page]).per(10)
   end
 
   def show
