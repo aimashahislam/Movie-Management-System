@@ -50,6 +50,7 @@ test:
 production:
   <<: *default
   adapter: postgresql
+  encoding: unicode
   database: MMS_production
   username: MMS
   password: <%= ENV['MMS_DATABASE_PASSWORD'] %>
