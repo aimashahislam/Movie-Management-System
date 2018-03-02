@@ -1,5 +1,5 @@
 <tr>
-  <td>Report: <%= report.statement %></td>
+  <td><%= report.statement %></td>
   <td><%= link_to "View Review", review_path(id: report.review_id) %></td>
   <td><%= link_to "Destroy Report", report_path(report), method: :delete, data: {confirm: "Are you sure?"} %></td>
   <td><%= link_to "Destroy Review", review_path(id: report.review_id), method: :delete, data: {confirm: "Are you sure?"} %></td>

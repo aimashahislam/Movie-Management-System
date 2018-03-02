@@ -1,20 +1,18 @@
-<div class="container">
-  <div class="row">
-    <div id="side-menu"  class="col-sm-2">
-      <ul id="links-list">
-        <% if user_signed_in? && current_user.admin %>
-          <%= render 'layouts/side_menu/admin_links' %>
-        <% else %>
-          <%= render 'layouts/side_menu/user_links' %>
-        <% end %>
-      </ul>
-    </div>
+<div class="row">
+  <div id="side-menu"  class="col-sm-2">
+    <ul id="links-list">
+      <% if user_signed_in? && current_user.admin %>
+        <%= render 'layouts/side_menu/admin_links' %>
+      <% else %>
+        <%= render 'layouts/side_menu/user_links' %>
+      <% end %>
+    </ul>
+  </div>
 
-    <div id="main-content" class="col-sm-10">
-      <%= render @movies %>
-    </div>
+  <div id="main-content" class="col-sm-10">
+    <%= render @movies %>
   </div>
-  <div class="col-sm-10 col-sm-offset-2">
-    <%= paginate @movies %><br/>
-  </div>
+</div>
+<div class="col-sm-10 col-sm-offset-2">
+  <%= paginate @movies %><br/>
 </div>

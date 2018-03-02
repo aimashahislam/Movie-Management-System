@@ -16,7 +16,7 @@ class ReportsController < ApplicationController
     @report = Report.new(report_params)
     respond_to do |format|
       if @report.save
-        format.html { redirect_to root_path, notice: 'Report was successfully created.' }
+        format.html { redirect_to movie_path(@review.movie_id), notice: 'Report was successfully created.' }
         format.json { render :show, status: :created, location: @movie }
       else
         format.html { render :new }

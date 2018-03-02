@@ -1,17 +1,19 @@
-<div class="panel panel-default">
+<div id="main-content" class="panel panel-default">
   <div class="panel-body">
     <div class="row">
-      <div id="col" class="col-md-11">
-        <%= @movie.trailer.html_safe %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
+      <div class="col-sm-4">
         <%= image_tag set_poster_avatar_URL(@movie), class: "poster" %>
         <div class="reviews">
           <div class="star-rating" data-score= <%= @movie.rating %> ></div>
           <div><em><%= "#{@movie.reviews.length} reviews" %></em></div>
         </div>
+      </div>
+      <div class="col-sm-8">
+        <%= @movie.trailer.html_safe %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
         <div class="table-responsive">
           <table class="table">
             <tbody>
@@ -56,7 +58,7 @@
           <div id="review-form" style="display:none;"></div>
         </div>
       </div>
-      <div class="col-md-7 col-md-offset-1">
+      <div class="col-sm-7 col-sm-offset-1">
         <h1 class="review_title"><%= @movie.name %></h1>
         <p><%= @movie.description.html_safe %></p>
         <div id="reviews">
