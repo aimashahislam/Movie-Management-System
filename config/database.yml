@@ -10,15 +10,16 @@
 #   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: square63
-  socket: /var/run/mysqld/mysqld.sock
+
 
 development:
   <<: *default
+  adapter: mysql2
+  encoding: utf8
+  socket: /var/run/mysqld/mysqld.sock
   database: MMS_development
 
 # Warning: The database defined as "test" will be erased and
