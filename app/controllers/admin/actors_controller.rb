@@ -45,7 +45,7 @@ class Admin::ActorsController < Admin::BaseController
   def destroy
     @actor.destroy
     respond_to do |format|
-      format.html { redirect_to actors_url, notice: 'Actor was successfully destroyed.' }
+      format.html { redirect_to admin_actors_url, notice: 'Actor was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
