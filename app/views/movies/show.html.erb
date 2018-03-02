@@ -22,12 +22,8 @@
                 <td><%= @movie.name %></td>
               </tr>
               <tr>
-                <td><strong>Description:</strong></td>
-                <td><%= @movie.description.html_safe %></td>
-              </tr>
-              <tr>
                 <td><strong>Movie length:</strong></td>
-                <td><%= @movie.duration %></td>
+                <td><%= @movie.duration.strftime("%T") %></td>
               </tr>
               <tr>
                 <td><strong>Director:</strong></td>
