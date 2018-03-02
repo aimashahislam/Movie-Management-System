@@ -1,5 +1,13 @@
 <tr>
   <td><strong><%= link_to actor.name, actor_path(actor) %></strong></td>
-  <td><%= link_to "Edit", edit_admin_actor_path(actor) %></td>
-  <td><%= link_to 'Delete', admin_actor_path(actor), method: :delete, data: {confirm: "Are you sure?"} %></td>
+  <td>
+    <%= link_to edit_admin_actor_path(actor)  do %>
+      <i class="fa fa-edit" aria-hidden="true"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to admin_actor_path(actor), method: :delete, data: {confirm: "Are you sure?"} do %>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    <% end %>
+  </td>
 </tr>

@@ -1,7 +1,15 @@
 <div class="reviews">
   <div class="star-rating" data-score= <%= review.rating %> ></div>
   <p><%= review.comment %></p>
-  <%= edit_link_for_review(review) %>
-  <%= delete_link_for_review(review) %>
-  <%= report_link_for_review(review) %>
+  <%= link_to edit_link_for_review(review) do %>
+    <i class="fa fa-edit" aria-hidden="true"></i>
+  <% end %>
+  <%= link_to delete_link_for_review(review), method: :delete, data: {confirm: "Are you sure?"} do %>
+    <i class="fa fa-trash" aria-hidden="true"></i>
+  <% end %>
+  <%= link_to report_link_for_review(review) do %>
+    <% if review.reported == false %>
+      <i class="fa fa-ban" aria-hidden="true"></i>
+    <% end %>
+  <% end %>
 </div>

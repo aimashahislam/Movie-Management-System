@@ -1,22 +1,18 @@
-<div class="container" id="main-content">
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <%= image_tag set_actor_avatar_URL(@actor), class: "profile" %>
-      </div>
+<div class="container" id="sign-up-box">
+  <div class="row">
+    <div class="col-sm-3 col-md-3">
+      <%= image_tag set_actor_avatar_URL(@actor), class: "poster img-thumbnail" %>
     </div>
-    <div class="row" class="form-control" id="actor-description">
-      <div class="col-sm-12 col-md-12">
-        <h1>Name: <%= @actor.name %></h1>
-
-        <p>
-          <strong>Date Of Birth:</strong>
-          <%= @actor.date_of_birth %>
-        </p>
-
-        <p>
-          <strong>Bio:</strong>
-          <%= @actor.bio.html_safe %>
-        </p>
-      </div>
+    <div class="col-sm-9 col-md-9">
+      <h1><strong>Name: <%= @actor.name %></strong></h1>
+      <p>
+        <strong>Date Of Birth:</strong>
+        <%= @actor.date_of_birth %>
+      </p>
+      <p>
+        <strong>Bio:</strong>
+        <%= @actor.bio.html_safe %>
+      </p>
     </div>
+  </div>
 </div>

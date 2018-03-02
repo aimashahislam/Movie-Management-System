@@ -1,5 +1,13 @@
 <tr>
   <td><strong><%= link_to movie.name, movie_path(movie) %></strong></td>
-  <td><%= link_to "Edit", edit_admin_movie_path(movie) %></td>
-  <td><%= link_to 'Delete', admin_movie_path(movie), method: :delete, data: {confirm: "Are you sure?"} %></td>
+  <td>
+    <%= link_to edit_admin_movie_path(movie) do %>
+      <i class="fa fa-edit" aria-hidden="true"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to admin_movie_path(movie), method: :delete, data: {confirm: "Are you sure?"} do %>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    <% end %>
+  </td>
 </tr>

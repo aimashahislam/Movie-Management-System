@@ -52,14 +52,14 @@
           <% if user_signed_in? %>
             <%= set_favourites_links(@movie) %>
             <%= link_to new_movie_review_path(@movie), remote: true do %>
-              <button class="btn btn-primary favourites">Add a Review</button>
+              <button class="btn btn-success favourites">Add a Review</button>
             <% end %>
           <% end %>
           <div id="review-form" style="display:none;"></div>
         </div>
       </div>
       <div class="col-sm-7 col-sm-offset-1">
-        <h1 class="review_title"><%= @movie.name %></h1>
+        <h1 class="review_title"><strong><%= @movie.name %></strong></h1>
         <p><%= @movie.description.html_safe %></p>
         <div id="reviews">
           <% if @movie.reviews.present? %>
