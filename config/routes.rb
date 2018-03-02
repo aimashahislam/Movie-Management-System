@@ -35,4 +35,6 @@ Rails.application.routes.draw do
       resources :movies, :actors, :users, :reviews, :reports, only: [:index, :show]
     end
   end
+
+  get '*path' => redirect('/')
 end
