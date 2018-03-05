@@ -3,4 +3,5 @@
     <div class="star-rating" data-score= <%= @review.rating %> ></div>
     <p><%= @review.comment %></p>
   </div>
+  <%= link_to "Show Movie", movie_path(id: @review.movie_id), class: "btn btn-primary" %>
 </div>
