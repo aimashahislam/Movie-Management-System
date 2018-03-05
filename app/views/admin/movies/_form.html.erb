@@ -34,6 +34,19 @@
           <%= form.text_field :release_date, start_year: 1900, required: true, id: "datepicker", autofocus: true, autocomplete: "release_date", class: 'form-control' %>
         </div>
 
+        <div>
+          <%= form.text_field :director, required: true, autofocus: true, autocomplete: "director", placeholder: 'director', class: 'form-control' %>
+        </div>
+
+        <div>
+          <%= form.text_field :producer, required: true, autofocus: true, autocomplete: "producer", placeholder: 'producer', class: 'form-control' %>
+        </div>
+
+        <div>
+          <%= form.text_field :writer, required: true, autofocus: true, autocomplete: "writer", placeholder: 'writer', class: 'form-control' %>
+        </div>
+
+
         <div class="field">
           <%= form.text_field :trailer, required: true, autofocus: true, autocomplete: "trailer", placeholder: 'trailer', class: 'form-control'  %>
         </div>

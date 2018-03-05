@@ -59,7 +59,7 @@ class Admin::MoviesController < Admin::BaseController
     end
 
     def movie_params
-      params.require(:movie).permit(:name, :genre, :duration, :description, :release_date, :trailer, actor_ids: [], posters_attributes: [:id, :avatar])
+      params.require(:movie).permit(:name, :genre, :duration, :description, :release_date, :trailer, :director, :producer, :writer, actor_ids: [], posters_attributes: [:id, :avatar])
     end
     
     def find_actors
