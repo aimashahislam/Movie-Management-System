@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<div id="main-content" class="col-sm-11 col-sm-offset-1">
+<div id="sign-up-box" class="col-sm-12">
   <table  class="table table-bordered table-striped">
     <thead>
       <th><strong>Name</strong></th>
@@ -27,8 +27,8 @@
       <%= render @movies %>
     </tbody>
   </table>
+  <div>
+    <%= paginate @movies %><br/>
+  </div>
 </div>
 
-<div class="col-sm-11 col-sm-offset-1">
-  <%= paginate @movies %><br/>
-</div>

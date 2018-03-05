@@ -4,7 +4,7 @@ class Admin::MoviesController < Admin::BaseController
 
   def index
     #@movies = Movie.search(params[:search], with: {deleted_at: 0}, sql: {include: :posters}, page: params[:page], per_page: 10)
-    @movies = Movie.page(params[:page]).per(20).includes(:posters)
+    @movies = Movie.includes(:posters).page(params[:page])
   end
 
   def show

@@ -9,7 +9,7 @@
         <% end %>
       </ul>
     </div>
-    <div id="main-content" class="col-sm-10">
+    <div id="sign-up-box" class="col-sm-10">
       <% @movies.each do |movie| %>
         <%= render partial: "movies/movie", locals: { movie: movie} %>
       <% end %>

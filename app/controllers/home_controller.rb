@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @movies = Movie.page(params[:page]).per(8).includes(:posters)
+    @movies = Movie.includes(:posters).page(params[:page])
   end
 end
