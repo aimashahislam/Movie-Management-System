@@ -36,19 +36,21 @@
               <tr>
                 <td><strong>Actors:</strong></td>
                 <td>
-                  <ul>
+                  <ol>
                     <% @movie.actors.each do |actor| %>
                       <li><%= actor.name %></li>
                     <% end %>
-                  </ul>
+                  </ol>
                 </td>
               </tr>
             </tbody>
           </table>
           <% if user_signed_in? %>
             <%= set_favourites_links(@movie) %>
-            <%= link_to new_movie_review_path(@movie), remote: true do %>
-              <button class="btn btn-success favourites">Add a Review</button>
+            <% if @review.blank? %>
+              <%= link_to new_movie_review_path(@movie), remote: true do %>
+                <button class="btn btn-success favourites">Add a Review</button>
+              <% end %>
             <% end %>
           <% end %>
           <div id="review-form" style="display:none;"></div>

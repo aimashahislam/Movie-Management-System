@@ -2,13 +2,17 @@
   <div class="star-rating" data-score= <%= review.rating %> ></div>
   <p><%= review.comment %></p>
   <%= link_to edit_link_for_review(review) do %>
-    <i class="fa fa-edit" aria-hidden="true"></i>
+    <% if user_signed_in? && review.user_id == current_user.id %>
+      <i class="fa fa-edit" aria-hidden="true"></i>
+    <% end %>
   <% end %>
   <%= link_to delete_link_for_review(review), method: :delete, data: {confirm: "Are you sure?"} do %>
-    <i class="fa fa-trash" aria-hidden="true"></i>
+    <% if user_signed_in? && review.user_id == current_user.id || current_user.try(:admin) %>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    <% end %>
   <% end %>
   <%= link_to report_link_for_review(review) do %>
-    <% if review.reported == false %>
+    <% if user_signed_in? && review.user_id != current_user.id && review.reported == false %>
       <i class="fa fa-ban" aria-hidden="true"></i>
     <% end %>
   <% end %>

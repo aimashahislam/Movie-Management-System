@@ -12,7 +12,7 @@ module ReviewsHelper
   end
 
   def report_link_for_review(review)
-    if user_signed_in? && review.reported == false
+    if user_signed_in? && review.user_id != current_user.id && review.reported == false
       new_review_report_path(review)
     end
   end

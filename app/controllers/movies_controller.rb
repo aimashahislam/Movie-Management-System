@@ -7,5 +7,8 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    if user_signed_in?
+      @review = Review.where(user_id: current_user.id, movie_id: @movie.id)
+    end
   end
 end
