@@ -1,9 +1,9 @@
 <h1><strong>Add a report</strong></h1>
 
-<div class="container" id="sign-up-form">
+<div id="sign-up-form">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2" id="sign-up-box">
-      <%= bootstrap_form_for([@review, @report], url: review_reports_path) do |f| %>
+      <%= bootstrap_form_for([@review, @report], url: review_reports_path, remote: true) do |f| %>
         <% if @report.errors.any? %>
           <div id="error_explanation">
             <h2>

@@ -11,7 +11,7 @@
       <i class="fa fa-trash" aria-hidden="true"></i>
     <% end %>
   <% end %>
-  <%= link_to report_link_for_review(review) do %>
+  <%= link_to report_link_for_review(review), remote: true do %>
     <% if user_signed_in? && review.user_id != current_user.id && review.reported == false %>
       <i class="fa fa-ban" aria-hidden="true"></i>
     <% end %>

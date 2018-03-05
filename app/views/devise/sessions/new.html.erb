@@ -19,10 +19,6 @@
           </div>
         <% end -%>
 
-        <% flash.each do |key, value| %>
-          <%= content_tag :div, value, class: "flash #{key}" %>
-        <% end %>
-
         <div>
           <%= f.submit "Log in", class: 'form-control btn btn-primary'%>
         </div>

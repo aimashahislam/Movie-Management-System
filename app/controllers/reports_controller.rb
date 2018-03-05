@@ -17,7 +17,7 @@ class ReportsController < ApplicationController
     respond_to do |format|
       if @report.save
         format.html { redirect_to movie_path(@review.movie_id), notice: 'Report was successfully created.' }
-        format.json { render :show, status: :created, location: @movie }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @report.errors, status: :unprocessable_entity }
