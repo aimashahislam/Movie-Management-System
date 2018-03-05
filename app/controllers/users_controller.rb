@@ -9,13 +9,12 @@ class UsersController < ApplicationController
   def add_favourites
     @favourite = @user.favourites.build
     @favourite.movie_id = params[:movie_id]
-    @favourite.user_id = current_user.id
     @favourite.save
     redirect_to movie_path(@movie)
   end
 
   def remove_favourites
-    @favourite = @user.favourites.where(movie_id: params[:movie_id]).where(user_id: current_user.id)
+    @favourite = @user.favourites.where(movie_id: params[:movie_id])
     @user.favourites.destroy(@favourite)
     redirect_to movie_path(@movie)
   end
