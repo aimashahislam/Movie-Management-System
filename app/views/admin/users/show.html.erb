@@ -2,10 +2,13 @@
   <div class="row">
     <div class="col-sm-3 col-md-3">
       <%= image_tag set_user_avatar_URL(@user), class: "poster img-thumbnail" %>
-      <p><%= @user.status %></p>
     </div>
     <div class="col-sm-9 col-md-9">
       <h2><strong>Name: <%= @user.name %></strong></h2>
+      <p>
+        <strong>Status:</strong>
+        <%= @user.status %>
+      </p>
       <p>
         <strong>Date Of Birth:</strong>
         <%= @user.date_of_birth.strftime("%F") %>
@@ -15,11 +18,11 @@
         <%= @user.phone_no %>
       </p>
       <strong>Favourites:</strong>
-      <ul>
+      <ol>
         <% @movies.each do |favourite| %>
-          <li><%= favourite.name %></li>
+          <li><%= link_to favourite.name, movie_path(favourite) %></li>
         <% end %>
-      </ul>
+      </ol>
     </div>
   </div>
 </div>
