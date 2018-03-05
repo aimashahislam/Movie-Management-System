@@ -8,9 +8,9 @@ module MoviesHelper
   end
 
   def set_favourites_links(movie)
-    @favourite = current_user.favourites.where(movie_id: movie, user_id: current_user.id)
+    @favourite = current_user.favourites.where(movie_id: movie)
     if @favourite.present?
-      link_to 'Remove from favourites', remove_favourites_path(movie_id: movie), class: "btn btn-success"
+      link_to 'Remove from favourites', remove_favourites_path(movie_id: movie), class: "btn btn-warning"
     else
       link_to 'Add to favourites', add_favourites_path(movie_id: movie), class: "btn btn-success"
     end
